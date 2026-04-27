@@ -15,10 +15,15 @@
   <body class="container col-6 border mt-5">
     <form
       class="container d-flex flex-column align-items-center w-100 m-3"
-      action="/login/"
       method="post">
       {% csrf_token %}
       <div class="mb-3 w-75">
+        {% if messages %}
+          <ul class="messages">
+            {% for message in messages %}
+            <li class="{{ message.tags }}" style="color: red">{{ message }}</li>
+          {% endfor %}
+        {% endif %}
         <label for="exampleInputEmail1" class="form-label">Email address</label>
         <input type="text" name="username" class="form-control" />
       </div>
