@@ -16,15 +16,15 @@
     <form
       class="container d-flex flex-column align-items-center w-100 m-3"
       method="post">
-      {% csrf_token %}
       <div class="mb-3 w-75">
+        {% csrf_token %}
         {% if messages %}
           <ul class="messages">
             {% for message in messages %}
             <li class="{{ message.tags }}" style="color: red">{{ message }}</li>
           {% endfor %}
         {% endif %}
-        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <label for="exampleInputEmail1" class="form-label">Username</label>
         <input type="text" name="username" class="form-control" />
       </div>
       <div class="mb-3 w-75">
